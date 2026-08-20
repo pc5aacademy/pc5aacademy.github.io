@@ -835,6 +835,146 @@ strong{font-weight:800}
   .w-conclusion,.w-conclusion::after{animation:none !important}
   .reveal{opacity:1;transform:none;transition:none}
 }
+
+/* ===================== CTA 재구성 ===================== */
+.cta{
+  position:relative;width:100%;overflow:hidden;
+  background:var(--ask-blue);color:#fff;
+  padding:clamp(64px,7vw,150px) var(--pad);
+}
+.cta .inner{position:relative;z-index:2}
+.cta-row{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(36px,4vw,110px);align-items:start;
+}
+.cta-copy{min-width:0}
+.cta h2{
+  font-size:clamp(30px,3.4vw,80px);font-weight:900;
+  line-height:1.3;letter-spacing:-.04em;color:#eaf3ff;
+  text-shadow:0 6px 22px rgba(6,32,92,.28);
+}
+.cta h2 .lead-line{color:#bfe0ff}
+.cta h2 .strong-line{color:#fff}
+.cta h2 .accent{color:var(--yellow);box-shadow:inset 0 -.2em 0 rgba(255,255,255,.35)}
+.cta-sub{
+  margin-top:.7em;font-size:clamp(16px,1.4vw,32px);
+  color:#eaf3ff;letter-spacing:-.03em;
+}
+.cta-sub .hl{
+  background:var(--ask-mint);color:#04143a;font-weight:800;
+  padding:.06em .3em .12em;border-radius:.14em;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+
+/* 사전 등록 혜택 */
+.benefit-head{
+  display:flex;align-items:center;gap:.45em;
+  margin-top:clamp(26px,2.6vw,60px);
+  font-size:clamp(17px,1.5vw,34px);font-weight:800;letter-spacing:-.03em;color:#fff;
+}
+.benefit-head svg{width:1.15em;height:1.15em;flex:none;color:var(--yellow)}
+.benefits{
+  margin-top:clamp(14px,1.3vw,28px);
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:rgba(255,255,255,.97);
+  border-radius:clamp(14px,1.4vw,30px);
+  padding:clamp(20px,1.8vw,40px) clamp(10px,1vw,22px);
+  box-shadow:0 18px 44px rgba(6,32,92,.22);
+}
+.benefit{
+  position:relative;display:flex;flex-direction:column;
+  padding:0 clamp(12px,1.2vw,28px);
+}
+.benefit + .benefit::before{
+  content:"";position:absolute;left:0;top:4%;bottom:4%;
+  width:1px;background:#dde5f3;
+}
+.benefit-top{display:grid;grid-template-columns:auto 1fr;gap:clamp(8px,.7vw,16px);align-items:start}
+.benefit .num{
+  flex:none;display:flex;align-items:center;justify-content:center;
+  width:clamp(24px,2vw,44px);height:clamp(24px,2vw,44px);border-radius:50%;
+  background:#3f6fe0;color:#fff;font-weight:800;
+  font-size:clamp(11px,.9vw,20px);letter-spacing:-.02em;
+}
+.benefit p{
+  color:#1f3050;font-weight:750;letter-spacing:-.03em;
+  font-size:clamp(13px,1.05vw,24px);line-height:1.5;
+}
+.benefit p small{display:block;margin-top:.35em;color:#7080a0;font-weight:600;font-size:.82em}
+.benefit .art{
+  width:clamp(52px,4.6vw,110px);height:auto;
+  margin:clamp(14px,1.3vw,28px) auto 0;align-self:center;
+}
+
+/* 오른쪽 정보 */
+.info-list{
+  display:flex;flex-direction:column;align-items:stretch;
+  gap:clamp(18px,1.8vw,40px);text-align:left;
+}
+.info-list > div{display:grid;grid-template-columns:auto 1fr;column-gap:clamp(14px,1.3vw,30px);align-items:center}
+.info-list .info-ic{grid-row:span 2}
+.info-list dt,.info-list dd{grid-column:2}
+.info-ic{
+  display:flex;align-items:center;justify-content:center;
+  width:clamp(56px,4.6vw,110px);height:clamp(56px,4.6vw,110px);border-radius:50%;
+  background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.5);
+  box-shadow:0 12px 30px rgba(6,32,92,.22), inset 0 0 clamp(14px,1.4vw,32px) rgba(255,255,255,.14);
+}
+.info-list .icon{width:52%;height:52%;color:#fff;margin:0}
+.info-list dt{font-size:clamp(13px,1.1vw,26px);color:#c9dcff;margin-bottom:.25em}
+.info-list dd{font-size:clamp(19px,1.7vw,40px);font-weight:800;letter-spacing:-.03em;color:#fff;white-space:nowrap}
+
+/* 배경 소품 */
+.cta-deco{position:absolute;inset:0;z-index:1;pointer-events:none}
+.cta-deco svg{position:absolute;filter:drop-shadow(0 18px 34px rgba(8,26,74,.28))}
+.deco-pencil{left:clamp(-1%,.5vw,2%);top:2%;width:clamp(50px,4.4vw,100px);transform:rotate(-16deg);opacity:.95}
+.deco-note{left:clamp(-4%,-1vw,0%);bottom:6%;width:clamp(90px,8vw,180px);opacity:.9}
+.deco-cal{right:clamp(0%,1.5vw,3%);bottom:4%;width:clamp(80px,7vw,160px);transform:rotate(7deg);opacity:.9}
+.cta-props{display:none}
+
+/* ----- 태블릿 ----- */
+@media (max-width:1100px){
+  .cta-row{grid-template-columns:1fr;gap:clamp(26px,3vw,40px)}
+  .info-list{flex-direction:row;flex-wrap:wrap;gap:clamp(18px,3vw,40px)}
+  .info-list > div{flex:1 1 200px}
+  .benefits{grid-template-columns:repeat(2,1fr);gap:clamp(14px,2vw,24px) 0}
+  .benefit + .benefit::before{display:none}
+  .benefit:nth-child(odd) + .benefit::before{display:block}
+}
+
+/* ----- 모바일 ----- */
+@media (max-width:768px){
+  .cta{padding:52px var(--pad)}
+  .cta h2{font-size:25px;line-height:1.35}
+  .cta-sub{font-size:15px;margin-top:.6em}
+  .benefit-head{font-size:17px;margin-top:24px}
+  .benefits{
+    grid-template-columns:1fr;
+    padding:6px 16px;border-radius:14px;
+  }
+  .benefit{padding:16px 0;flex-direction:row;align-items:center;gap:12px}
+  .benefit + .benefit{border-top:1px solid #e3eaf6}
+  .benefit + .benefit::before{display:none}
+  .benefit-top{flex:1 1 auto}
+  .benefit .num{width:24px;height:24px;font-size:11px}
+  .benefit p{font-size:14px;line-height:1.45}
+  .benefit p br{display:none}          /* 좁은 폭에선 자동 줄바꿈이 자연스러움 */
+  .benefit .art{flex:none;width:46px;margin:0}
+  .info-list{gap:14px}
+  .info-list > div{flex:1 1 100%}
+  .info-ic{width:48px;height:48px}
+  .info-list dt{font-size:12px}
+  .info-list dd{font-size:17px}
+  .deco-pencil{width:42px;opacity:.55}
+  .deco-note{width:70px;opacity:.5}
+  .deco-cal{width:64px;opacity:.5}
+}
+@media (max-width:430px){
+  .cta h2{font-size:22px}
+  .benefit p{font-size:13.5px}
+  .benefit .art{width:40px}
+  .deco-note,.deco-cal,.deco-pencil{display:none}
+}
 </style>
 </head>
 <body>
@@ -1131,19 +1271,25 @@ strong{font-weight:800}
     </section>-->
   </div>
 
-  <!-- ================= CTA ================= -->
+   <!-- ================= CTA ================= -->
   <section class="cta">
     <div class="cta-deco" aria-hidden="true">
-      <!-- 스프링 노트 -->
+      <!-- 연필 (좌상단) -->
+      <svg class="deco-pencil" viewBox="0 0 60 180" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14 26h32v118H14z" fill="#ffe2a3"/>
+        <path d="M14 26h12v118H14z" fill="#ffd27a"/>
+        <path d="M14 144h32l-16 26z" fill="#f6efe0"/>
+        <path d="M24 158l6 12 6-12z" fill="#3b4a6b"/>
+        <rect x="14" y="12" width="32" height="16" rx="5" fill="#cbdcfd"/>
+      </svg>
+      <!-- 스프링 노트 (좌하단) -->
       <svg class="deco-note" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
         <g transform="rotate(-6 80 95)">
           <rect x="20" y="18" width="122" height="156" rx="12" fill="#ffffff"/>
           <rect x="20" y="18" width="22" height="156" rx="11" fill="#cbdcfd"/>
           <g fill="#dbe6fb">
-            <rect x="56" y="52" width="70" height="8" rx="4"/>
-            <rect x="56" y="76" width="54" height="8" rx="4"/>
-            <rect x="56" y="100" width="64" height="8" rx="4"/>
-            <rect x="56" y="124" width="42" height="8" rx="4"/>
+            <rect x="56" y="52" width="70" height="8" rx="4"/><rect x="56" y="76" width="54" height="8" rx="4"/>
+            <rect x="56" y="100" width="64" height="8" rx="4"/><rect x="56" y="124" width="42" height="8" rx="4"/>
           </g>
           <g fill="#8fb0f5">
             <circle cx="31" cy="44" r="6"/><circle cx="31" cy="76" r="6"/>
@@ -1151,8 +1297,7 @@ strong{font-weight:800}
           </g>
         </g>
       </svg>
-
-      <!-- 달력 (개강일) -->
+      <!-- 달력 (우하단) -->
       <svg class="deco-cal" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
         <rect x="16" y="26" width="128" height="118" rx="14" fill="#ffffff"/>
         <path d="M16 40a14 14 0 0114-14h100a14 14 0 0114 14v18H16z" fill="#4a90e2"/>
@@ -1165,35 +1310,85 @@ strong{font-weight:800}
         </g>
         <rect x="70" y="102" width="20" height="16" rx="4" fill="#ffd27a"/>
       </svg>
-
-      <!-- 연필 -->
-      <svg class="deco-pencil" viewBox="0 0 60 180" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14 26h32v118H14z" fill="#ffe2a3"/>
-        <path d="M14 26h12v118H14z" fill="#ffd27a"/>
-        <path d="M14 144h32l-16 26z" fill="#f6efe0"/>
-        <path d="M24 158l6 12 6-12z" fill="#3b4a6b"/>
-        <rect x="14" y="12" width="32" height="16" rx="5" fill="#cbdcfd"/>
-      </svg>
-
-      <!-- 얇은 책 두 권 -->
-      <svg class="deco-slim" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
-        <g transform="rotate(4 100 90)">
-          <rect x="16" y="80" width="168" height="24" rx="7" fill="#ffffff"/>
-          <rect x="16" y="80" width="168" height="8" rx="4" fill="#dfe9ff"/>
-        </g>
-        <g transform="rotate(-5 100 56)">
-          <rect x="26" y="48" width="148" height="24" rx="7" fill="#cbdcfd"/>
-          <rect x="26" y="48" width="148" height="8" rx="4" fill="#aec6fb"/>
-        </g>
-      </svg>
     </div>
 
     <div class="inner">
       <div class="cta-row">
+        <!-- 왼쪽: 문구 + 사전 등록 혜택 -->
         <div class="cta-copy reveal">
           <h2><span class="lead-line">2028 대입을 앞서는 선택,</span><br><span class="strong-line">지금 시작해야</span> <span class="accent">앞서갑니다.</span></h2>
           <p class="cta-sub"><span class="hl">2027 5A 윈터스쿨</span>에서 새로운 입시의 첫걸음을 함께하세요.</p>
+
+          <p class="benefit-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 12h18M12 8v13"/>
+              <path d="M12 8S10.5 3.5 8 4c-2 .4-1.8 4 4 4zM12 8s1.5-4.5 4-4c2 .4 1.8 4-4 4z"/>
+            </svg>
+            윈터스쿨 사전 등록 혜택
+          </p>
+
+          <div class="benefits">
+            <article class="benefit">
+              <div class="benefit-top">
+                <span class="num">01</span>
+                <p>10/31(토) 오후 7시까지<br>등록 시 수강료 10% 할인
+                  <small>(예약금 납부자 포함)</small>
+                </p>
+              </div>
+              <svg class="art" viewBox="0 0 120 90" aria-hidden="true">
+                <path d="M10 26h100v14a10 10 0 000 20v14H10V60a10 10 0 000-20z" fill="#dfe9fb"/>
+                <path d="M44 58l32-26" stroke="#9fb8e8" stroke-width="6" stroke-linecap="round"/>
+                <circle cx="46" cy="38" r="7" fill="#9fb8e8"/><circle cx="74" cy="52" r="7" fill="#9fb8e8"/>
+              </svg>
+            </article>
+
+            <article class="benefit">
+              <div class="benefit-top">
+                <span class="num">02</span>
+                <p>프리미엄 수학 진단테스트<br>&amp; 대면 컨설팅 비용<br>(30,000원) 무료</p>
+              </div>
+              <svg class="art" viewBox="0 0 120 90" aria-hidden="true">
+                <rect x="34" y="10" width="52" height="72" rx="7" fill="#dfe9fb"/>
+                <rect x="48" y="4" width="24" height="13" rx="5" fill="#9fb8e8"/>
+                <g stroke="#9fb8e8" stroke-width="5" stroke-linecap="round" fill="none">
+                  <path d="M45 33l5 5 9-10M45 51l5 5 9-10"/>
+                  <path d="M68 35h10M68 53h10"/>
+                </g>
+                <path d="M60 66l7 8 14-17" stroke="#5d84d6" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </article>
+
+            <article class="benefit">
+              <div class="benefit-top">
+                <span class="num">03</span>
+                <p>개인 라이브러리<br>선착순 무료</p>
+              </div>
+              <svg class="art" viewBox="0 0 120 90" aria-hidden="true">
+                <path d="M60 24C48 14 32 12 16 17v54c16-5 32-3 44 7z" fill="#ffffff" stroke="#c6d6f2" stroke-width="3"/>
+                <path d="M60 24c12-10 28-12 44-7v54c-16-5-32-3-44 7z" fill="#eaf1fd" stroke="#c6d6f2" stroke-width="3"/>
+                <g stroke="#c6d6f2" stroke-width="4" stroke-linecap="round">
+                  <path d="M28 32h20M28 44h16M72 32h20M72 44h16"/>
+                </g>
+              </svg>
+            </article>
+
+            <article class="benefit">
+              <div class="benefit-top">
+                <span class="num">04</span>
+                <p>사전예약금<br>50만원</p>
+              </div>
+              <svg class="art" viewBox="0 0 120 90" aria-hidden="true">
+                <ellipse cx="52" cy="24" rx="30" ry="10" fill="#dfe9fb"/>
+                <path d="M22 24v14c0 5.5 13.4 10 30 10s30-4.5 30-10V24" fill="#cfdef8"/>
+                <path d="M22 42v14c0 5.5 13.4 10 30 10s30-4.5 30-10V42" fill="#dfe9fb"/>
+                <circle cx="88" cy="58" r="20" fill="#ffd27a"/>
+                <path d="M80 50l8 14 8-14M80 58h16" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none"/>
+              </svg>
+            </article>
+          </div>
         </div>
+
+        <!-- 오른쪽: 개강 정보 -->
         <dl class="info-list reveal">
           <div>
             <span class="info-ic"><svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
@@ -1214,44 +1409,6 @@ strong{font-weight:800}
             <dt>상담 문의</dt><dd>031-347-5151</dd>
           </div>
         </dl>
-      </div>
-
-      <div class="cta-props" aria-hidden="true">
-        <svg class="prop prop-note" viewBox="0 0 160 190" xmlns="http://www.w3.org/2000/svg">
-          <g transform="rotate(-6 80 95)">
-            <rect x="20" y="18" width="122" height="156" rx="12" fill="#ffffff"/>
-            <rect x="20" y="18" width="22" height="156" rx="11" fill="#cbdcfd"/>
-            <g fill="#dbe6fb">
-              <rect x="56" y="52" width="70" height="8" rx="4"/><rect x="56" y="76" width="54" height="8" rx="4"/>
-              <rect x="56" y="100" width="64" height="8" rx="4"/><rect x="56" y="124" width="42" height="8" rx="4"/>
-            </g>
-            <g fill="#8fb0f5">
-              <circle cx="31" cy="44" r="6"/><circle cx="31" cy="76" r="6"/>
-              <circle cx="31" cy="108" r="6"/><circle cx="31" cy="140" r="6"/>
-            </g>
-          </g>
-        </svg>
-
-        <svg class="prop prop-pencil" viewBox="0 0 60 180" xmlns="http://www.w3.org/2000/svg">
-          <path d="M14 26h32v118H14z" fill="#ffe2a3"/>
-          <path d="M14 26h12v118H14z" fill="#ffd27a"/>
-          <path d="M14 144h32l-16 26z" fill="#f6efe0"/>
-          <path d="M24 158l6 12 6-12z" fill="#3b4a6b"/>
-          <rect x="14" y="12" width="32" height="16" rx="5" fill="#cbdcfd"/>
-        </svg>
-
-        <svg class="prop prop-cal" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
-          <rect x="16" y="26" width="128" height="118" rx="14" fill="#ffffff"/>
-          <path d="M16 40a14 14 0 0114-14h100a14 14 0 0114 14v18H16z" fill="#4a90e2"/>
-          <rect x="44" y="14" width="12" height="26" rx="6" fill="#2f6fc9"/>
-          <rect x="104" y="14" width="12" height="26" rx="6" fill="#2f6fc9"/>
-          <g fill="#d7e4fb">
-            <rect x="34" y="74" width="20" height="16" rx="4"/><rect x="70" y="74" width="20" height="16" rx="4"/>
-            <rect x="106" y="74" width="20" height="16" rx="4"/><rect x="34" y="102" width="20" height="16" rx="4"/>
-            <rect x="106" y="102" width="20" height="16" rx="4"/>
-          </g>
-          <rect x="70" y="102" width="20" height="16" rx="4" fill="#ffd27a"/>
-        </svg>
       </div>
     </div>
   </section>
