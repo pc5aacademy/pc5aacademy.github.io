@@ -32,7 +32,7 @@
   --w-blue:#3f9ae0;        /* 포인트 블루 */
   --bridge-navy:#132d66;   /* 히어로 하단 정리색 */
   --news-dark:#06070d;     /* 뉴스 배너 바탕색(새 이미지 상단) */
-  --fade-hero:clamp(120px,14vw,290px);   /* 히어로 하단 페이드 길이 */
+  --fade-hero: clamp(40px, 3.5vw, 90px);   /* 기존 clamp(120px,14vw,290px) */
   --run-top:clamp(150px,17vw,360px);     /* 히어로 → 뉴스 전환 길이 */
   --line:#dfe7f4;
   --inner:2200px;              /* 큰 화면에서 콘텐츠 최대 폭 */
@@ -843,9 +843,9 @@ strong{font-weight:800}
   <header class="hero">
     <div class="snow-layer" aria-hidden="true"></div>
     <picture>
-      <source media="(max-width:768px)" srcset="hero-mo.webp?v=1">
-      <img src="hero.webp?v=2"
-           alt="2027 윈터스쿨 - 2028 대입 개편, 준비는 이번 겨울부터. 달라진 입시에 맞춘 선제적 학습 전략. 1월 4일(월) 개강">
+     <source media="(max-width:768px)" srcset="hero-mo.webp?v=3">
+     <img src="hero.webp?v=4" alt="2027 윈터스쿨 - 2028 대입 개편, 준비는 이번 겨울부터. 달라진 입시에 맞춘 선제적 학습 전략. 1월 4일(월) 개강">
+   
     </picture>
   </header>
 
